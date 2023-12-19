@@ -1,0 +1,97 @@
+@import url(./Normalize.css);
+@import url(./fonts.css);
+:root {
+  --body-bg-color: #f7ecde;
+  --pop-font: "Poppins", sans-serif;
+  --pac-font: "Pacifico", cursive;
+  --main-transition: all 0.3s ease;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+body {
+  background-color: var(--body-bg-color) !important;
+  font-family: var(--pop-font) !important;
+}
+
+body h1 {
+  padding-block: 4rem;
+  text-align: center;
+  border-bottom: 2px dashed black;
+}
+
+body h1 span {
+  font-family: var(--pac-font);
+  font-size: 3rem;
+}
+
+main h1 span {
+  position: relative;
+}
+
+main h1 span::before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background-color: #fec260;
+  z-index: -1;
+  transition: var(--main-transition);
+}
+
+main h1 span:hover::before {
+  height: 50%;
+}
+
+main h2 span {
+  background: linear-gradient(to right, #3ca55c, #b5ac49);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-control:focus {
+  border-color: #b5ac49 !important;
+  box-shadow: 0 0 0 0.25rem rgb(181, 172, 73, 0.25) !important;
+}
+
+.form-control.is-invalid:focus {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.25rem rgb(220, 53, 69, 0.25) !important;
+}
+
+.form-control.is-valid:focus {
+  border-color: #28a745 !important;
+  box-shadow: 0 0 0 0.25rem rgb(40, 167, 69, 0.25) !important;
+}
